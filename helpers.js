@@ -212,7 +212,123 @@ const exportedMethods = {
         }
 
         return age;
+    },
+
+    getDate() {
+        //Returns the current date in the following format: 2025-04-01T10:15:30Z
+    
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = String(date.getMonth() + 1).padStart(2, '0');
+        let day = String(date.getDate()).padStart(2, '0');
+        let hours = String(date.getUTCHours()).padStart(2, '0');
+        let minutes = String(date.getUTCMinutes()).padStart(2, '0');
+        let seconds = String(date.getUTCSeconds()).padStart(2, '0');
+    
+        let currentDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}Z`;
+    
+        return currentDate;
+    },
+    
+    
+    
+    isAdmin(
+        groupId,
+        userId
+    ) {
+        //Determines if given user is the admin of a group
+        let group = groups.getGroupById(groupId);
+
+
+
+        if(!group) throw 'Could not find group'
+
+        let groupMembers = group.members;
+
+
+        if(!groupMembers || groupMembers == []) throw 'Group has no members';
+
+    
+        if((group.members[0] == userId) && checkAuth(userId, authTk)) {
+            return true;
+        } else {
+            return false;
+        }
+    
+    },
+
+    checkLocation(location){
+        let location = this.checkString(location, 'location');
+
+        if(location != ('Edwin A. Stevens' || 'Library' || 'Gateway South' || 'Gateway North' || 'North Building' || 'Babbio' || 'ABS' || 'Burchard' || 'Carnegie' || 'Davidson' || 'Altorfer' || 'Kidde' || 'McLean' || 'Morton' || 'Nicoll' || 'Pierce' || 'Rocco' || 'TBD')){
+            throw 'Invalid Location'
+        }
+
+
+
+
+        return location;
+
+    },
+
+
+    checkCourse(course){
+        let course = this.checkString(course, 'course')
+
+        if(/^[a-zA-Z]{2,4}[-\s]\d{3}$/.test(course)){
+            return course;
+        } else {
+            throw 'Course must be in following format: CS-546 or CS 546'
+        }
+    
+    
+    },
+
+
+    checkTime(time){
+        let time = this.checkString(time, 'time');
+
+        if(/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time)){
+            return time;
+        } else {
+            throw 'Invalid Time'
+        }
+
+    },
+
+    checkTimes(time1, time2){
+        let time1 = this.checkString(time1, 'startTime');
+        let time2 = this.checkString(time2, 'endTime');
+
+        const convertToHHMM = (time) => {
+            const [hours, minutes] = time.split(':');
+            return parseInt(hours) * 100 + parseInt(minutes);
+        };
+
+    
+        const timeNum1 = convertToHHMM(time1);
+        const timeNum2 = convertToHHMM(time2);
+
+    
+        if (timeNum2 <= timeNum1) {
+            throw 'End time must be later than start time';
+        }
+    
+        return true;
+    },
+
+
+    checkType(groupType){
+        let groupType = this.checkString(groupType, 'groupType');
+
+        if(groupType != "study-group"){
+            throw 'Invalid group type'
+        } else {
+            return groupType;
+        }
+
     }
+
 };
 
 export default exportedMethods;
