@@ -178,3 +178,32 @@ button {
         margin-bottom: 0.5rem;
     }
 }
+
+
+
+
+
+/* Group Styles */
+
+
+.group{
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+
+}
+
+
+
+.groupHeader{
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+}
+
+

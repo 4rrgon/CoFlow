@@ -7,7 +7,7 @@ try {
         "CS546 Group11",
         "We are looking for a group for out 546 project",
         5,
-        "library",
+        "Library",
         "CS 546",
         "21:00",
         "22:00",

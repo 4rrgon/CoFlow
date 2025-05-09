@@ -260,26 +260,24 @@ const exportedMethods = {
     checkLocation(location){
         location = this.checkString(location, 'location');
 
-        location = location.toLowerCase()
-
-        if (location != 'edwin a. stevens' && 
-            location != 'library' && 
-            location != 'gateway south' && 
-            location != 'gateway north' && 
-            location != 'north building' && 
-            location != 'babbio' && 
-            location != 'abs' && 
-            location != 'burchard' && 
-            location != 'carnegie' && 
-            location != 'davidson' && 
-            location != 'altorfer' && 
-            location != 'kidde' && 
-            location != 'mcLean' && 
-            location != 'morton' && 
-            location != 'nicoll' && 
-            location != 'pierce' && 
-            location != 'rocco' && 
-            location != 'tbd'){
+        if (location != 'Edwin A. Stevens' && 
+            location != 'Library' && 
+            location != 'Gateway South' && 
+            location != 'Gateway North' && 
+            location != 'North Building' && 
+            location != 'Babbio' && 
+            location != 'ABS' && 
+            location != 'Burchard' && 
+            location != 'Carnegie' && 
+            location != 'Davidson' && 
+            location != 'Altorfer' && 
+            location != 'Kidde' && 
+            location != 'McLean' && 
+            location != 'Morton' && 
+            location != 'Nicoll' && 
+            location != 'Pierce' && 
+            location != 'Rocco' && 
+            location != 'TBD'){
             throw 'Invalid Location'
         }
 

@@ -241,6 +241,7 @@ export const getAllNonFullGroups = async() => {
     }
     
 
+    
     return groups;
 
 
@@ -255,6 +256,10 @@ export const requestToJoin = async(userId, groupId) =>{
 
     let groupsCollection = await groups();
     if(!groupsCollection) throw 'Could not connect to database';
+
+
+    let group = await getGroupById(groupId);
+    if(group.capacity);
 
 
 

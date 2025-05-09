@@ -1,0 +1,24 @@
+<div>
+    
+</div>
+
+
+{{#each groups}}
+    <div class="group">
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        <p>{{Location}}</p>
+        <p>Course: {{course}}</p>
+        <p>Capacity: {{capacity}}</p>
+        <p>{{startTime}} - {{endTime}}</p>
+        <p>{{meetingDate}}</p>
+        <p>{{endTime}}</p>
+    </div>
+    <form name="reqJoin" id="reqJoin-form" class="joinForm" method="POST" action="/reqJoin">
+        <button type="submit" id="joinButton" name="joinButton">Request to Join</button>
+    </form>
+{{/each}}
+
+
+
+

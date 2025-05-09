@@ -1,12 +1,25 @@
+<form name="searchGroups" id="searchGroups" class="searchForm" method="POST" action="/reqJoin">
+    
+    <button type="submit" id="searchButton" name="searchButton">Search</button>
+</form>
+
+
+<h1 class="groupHeader">
+    Available Groups
+</h1>
+
 {{#each groups}}
-  <div class="group">
-    <h2>{{title}}</h2>
-    <p>{{description}}</p>
-    <p>{{Location}}</p>
-    <p>Course: {{course}}</p>
-    <p>Capacity: {{capacity}}</p>
-    <p>{{startTime}} - {{endTime}}</p>
-    <p>{{meetingDate}}</p>
-    <p>{{endTime}}</p>
-  </div>
+    <div class="group">
+        <h2>{{groupName}}</h2>
+        <p>{{location}} | {{course}} | {{startTime}} - {{endTime}} | {{meetingDate}}</p>
+        <p>{{description}}</p>
+        <form name="reqJoin" id="reqJoin-form" class="joinForm" method="POST" action="/reqJoin">
+        <button type="submit" id="joinButton" name="joinButton">Request to Join</button>
+    </form>
+
+    </div>
 {{/each}}
+
+
+
+
