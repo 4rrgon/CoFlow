@@ -258,7 +258,7 @@ const exportedMethods = {
     },
 
     checkLocation(location){
-        let location = this.checkString(location, 'location');
+        location = this.checkString(location, 'location');
 
         if(location != ('Edwin A. Stevens' || 'Library' || 'Gateway South' || 'Gateway North' || 'North Building' || 'Babbio' || 'ABS' || 'Burchard' || 'Carnegie' || 'Davidson' || 'Altorfer' || 'Kidde' || 'McLean' || 'Morton' || 'Nicoll' || 'Pierce' || 'Rocco' || 'TBD')){
             throw 'Invalid Location'
@@ -273,7 +273,7 @@ const exportedMethods = {
 
 
     checkCourse(course){
-        let course = this.checkString(course, 'course')
+        course = this.checkString(course, 'course')
 
         if(/^[a-zA-Z]{2,4}[-\s]\d{3}$/.test(course)){
             return course;
@@ -286,7 +286,7 @@ const exportedMethods = {
 
 
     checkTime(time){
-        let time = this.checkString(time, 'time');
+        time = this.checkString(time, 'time');
 
         if(/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(time)){
             return time;
@@ -297,8 +297,8 @@ const exportedMethods = {
     },
 
     checkTimes(time1, time2){
-        let time1 = this.checkString(time1, 'startTime');
-        let time2 = this.checkString(time2, 'endTime');
+        time1 = this.checkString(time1, 'startTime');
+        time2 = this.checkString(time2, 'endTime');
 
         const convertToHHMM = (time) => {
             const [hours, minutes] = time.split(':');
@@ -319,7 +319,7 @@ const exportedMethods = {
 
 
     checkType(groupType){
-        let groupType = this.checkString(groupType, 'groupType');
+        groupType = this.checkString(groupType, 'groupType');
 
         if(groupType != "study-group"){
             throw 'Invalid group type'
