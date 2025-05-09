@@ -16,3 +16,7 @@ router.route('/').get(async (req, res) => {
       return res.status(500).render('error', { error: 'Internal Server Error' });
     }
   });
+
+
+
+export default router;

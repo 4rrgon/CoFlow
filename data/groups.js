@@ -21,18 +21,18 @@ export const createGroup = async (
         throw 'All fields must have inputs'
     };
 
-    let groupName = helpers.checkString(groupName, 'groupName');
-    let description = helpers.checkString(description, 'description');
+    groupName = helpers.checkString(groupName, 'groupName');
+    description = helpers.checkString(description, 'description');
     if((!Number.isInteger(capacity)) || !((capacity > 1) && (capacity < 16))) throw 'Capacity must be a postiive integer less than 16 and greater than 1';
-    let location = helpers.checkLocation(location);
-    let course = helpers.checkCourse(course);
-    let startTime = helpers.checkTime(time);
-    let endTime = helpers.checkTime(time);
+    location = helpers.checkLocation(location);
+    course = helpers.checkCourse(course);
+    startTime = helpers.checkTime(time);
+    endTime = helpers.checkTime(time);
     checkTimes(startTime, endTime);
-    let meetingDate = helpers.checkDate(meetingDate);
-    let groupType = helpers.checkType(groupType);
-    let creatorId = helpers.checkId(creatorId, 'creatorId');
-    let tags = helpers.checkStringArray(tags, 'tags');
+    meetingDate = helpers.checkDate(meetingDate);
+    groupType = helpers.checkType(groupType);
+    creatorId = helpers.checkId(creatorId, 'creatorId');
+    tags = helpers.checkStringArray(tags, 'tags');
 
 
 
@@ -123,18 +123,18 @@ export const editGroup = async (
         throw 'All fields must have inputs'
     };
 
-    let groupName = helpers.checkString(groupName, 'groupName');
-    let description = helpers.checkString(description, 'description');
+    groupName = helpers.checkString(groupName, 'groupName');
+    description = helpers.checkString(description, 'description');
     if((!Number.isInteger(capacity)) || !((capacity > 1) && (capacity < 16))) throw 'Capacity must be a postiive integer less than 16 and greater than 1';
-    let location = helpers.checkLocation(location);
-    let course = helpers.checkCourse(course);
-    let startTime = helpers.checkTime(time);
-    let endTime = helpers.checkTime(time);
+    location = helpers.checkLocation(location);
+    course = helpers.checkCourse(course);
+    startTime = helpers.checkTime(time);
+    endTime = helpers.checkTime(time);
     checkTimes(startTime, endTime);
-    let meetingDate = helpers.checkDate(meetingDate);
-    let groupType = helpers.checkType(groupType);
-    let creatorId = helpers.checkId(creatorId, 'creatorId');
-    let tags = helpers.checkStringArray(tags, 'tags');
+    meetingDate = helpers.checkDate(meetingDate);
+    groupType = helpers.checkType(groupType);
+    creatorId = helpers.checkId(creatorId, 'creatorId');
+    tags = helpers.checkStringArray(tags, 'tags');
 
 
 
@@ -188,7 +188,7 @@ export const getGroupById = async(groupId) => {
     //Returns group matching given Id
     if(!groupId) throw 'Must provide groupId';
 
-    let groupId = helpers.checkId(groupId);
+    groupId = helpers.checkId(groupId);
 
 
 
@@ -211,7 +211,7 @@ export const getGroupsForMember = async(userId) => {
     //Returns all groups a specific user is a member of
     if(!userId) throw 'Must provide userId';
 
-    let userId = helpers.checkId(userId);
+    userId = helpers.checkId(userId);
 
 
     const groupsCollection = await groups();
@@ -250,8 +250,8 @@ export const requestToJoin = async(userId, groupId) =>{
     if(!userId) throw 'Must provide userId';
     if(!groupId) throw 'Must provide groupId';
 
-    let userId = helpers.checkId(userId);
-    let groupId = helpers.checkId(groupId);
+    userId = helpers.checkId(userId);
+    groupId = helpers.checkId(groupId);
 
     let groupsCollection = await groups();
     if(!groupsCollection) throw 'Could not connect to database';
@@ -271,9 +271,9 @@ export const rejectUser = async(userId, rejectedUser, groupId) => {
     if(!rejectedUser) throw 'Must provide rejectedUser';
     if(!groupId) throw 'Must provide groupId';
 
-    let userId = helpers.checkId(userId);
-    let rejectedUser = helpers.checkId(rejectedUser);
-    let groupId = helpers.checkId(groupId);
+    userId = helpers.checkId(userId);
+    rejectedUser = helpers.checkId(rejectedUser);
+    groupId = helpers.checkId(groupId);
 
 
 
@@ -287,9 +287,9 @@ export const approveUser = async(userId, approvedUser, groupId) => {
     if(!approvedUser) throw 'Must provide approvedUser';
     if(!groupId) throw 'Must provide groupId';
 
-    let userId = helpers.checkId(userId);
-    let approvedUser = helpers.checkId(approvedUser);
-    let groupId = helpers.checkId(groupId);
+    userId = helpers.checkId(userId);
+    approvedUser = helpers.checkId(approvedUser);
+    groupId = helpers.checkId(groupId);
 
 
 
