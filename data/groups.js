@@ -26,12 +26,12 @@ export const createGroup = async (
     if((!Number.isInteger(capacity)) || !((capacity > 1) && (capacity < 16))) throw 'Capacity must be a postiive integer less than 16 and greater than 1';
     location = helpers.checkLocation(location);
     course = helpers.checkCourse(course);
-    startTime = helpers.checkTime(time);
-    endTime = helpers.checkTime(time);
-    checkTimes(startTime, endTime);
+    startTime = helpers.checkTime(startTime);
+    endTime = helpers.checkTime(endTime);
+    helpers.checkTimes(startTime, endTime);
     meetingDate = helpers.checkDate(meetingDate);
     groupType = helpers.checkType(groupType);
-    creatorId = helpers.checkId(creatorId, 'creatorId');
+    // creatorId = helpers.checkId(creatorId, 'creatorId');
     tags = helpers.checkStringArray(tags, 'tags');
 
 
@@ -128,8 +128,8 @@ export const editGroup = async (
     if((!Number.isInteger(capacity)) || !((capacity > 1) && (capacity < 16))) throw 'Capacity must be a postiive integer less than 16 and greater than 1';
     location = helpers.checkLocation(location);
     course = helpers.checkCourse(course);
-    startTime = helpers.checkTime(time);
-    endTime = helpers.checkTime(time);
+    startTime = helpers.checkTime(startTime);
+    endTime = helpers.checkTime(startTime);
     checkTimes(startTime, endTime);
     meetingDate = helpers.checkDate(meetingDate);
     groupType = helpers.checkType(groupType);

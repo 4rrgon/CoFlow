@@ -2,21 +2,29 @@ import * as groups from "../data/groups.js";
 
 
 console.log('Testing Create Group function');
+try {
+    let output = await groups.createGroup(
+        "CS546 Group11",
+        "We are looking for a group for out 546 project",
+        5,
+        "library",
+        "CS 546",
+        "21:00",
+        "22:00",
+        "2024-01-01",
+        "study-group",
+        "12345",
+        ['javascript', 'computer science', 'web programming']
+    
+    );
 
-let output = await groups.createGroup(
-    "CS546 Group11",
-    "We are looking for a group for out 546 project",
-    5,
-    "library",
-    "CS546",
-    "21:00",
-    "22:00",
-    "2024-01-01",
-    "study-group",
-    "12345",
-    "javascript"
+    console.log(output);
+    
+} catch (error) {
+    console.log(error);
+    
+}
 
-);
 
 let output2 = await groups.createGroup(
     "MA331 Group",

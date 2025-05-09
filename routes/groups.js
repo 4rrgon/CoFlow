@@ -9,7 +9,9 @@ import Validation from '../helpers.js'
 router.route('/').get(async (req, res) => {
     //code here for GET
     try {
-        let groups = groupData.getAllGroups();
+        let groups = await groupData.getAllGroups();
+
+        console.log(groups);
     
         return res.render('groups', { groups });
     } catch (e) {

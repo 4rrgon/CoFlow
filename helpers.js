@@ -260,7 +260,26 @@ const exportedMethods = {
     checkLocation(location){
         location = this.checkString(location, 'location');
 
-        if(location != ('Edwin A. Stevens' || 'Library' || 'Gateway South' || 'Gateway North' || 'North Building' || 'Babbio' || 'ABS' || 'Burchard' || 'Carnegie' || 'Davidson' || 'Altorfer' || 'Kidde' || 'McLean' || 'Morton' || 'Nicoll' || 'Pierce' || 'Rocco' || 'TBD')){
+        location = location.toLowerCase()
+
+        if (location != 'edwin a. stevens' && 
+            location != 'library' && 
+            location != 'gateway south' && 
+            location != 'gateway north' && 
+            location != 'north building' && 
+            location != 'babbio' && 
+            location != 'abs' && 
+            location != 'burchard' && 
+            location != 'carnegie' && 
+            location != 'davidson' && 
+            location != 'altorfer' && 
+            location != 'kidde' && 
+            location != 'mcLean' && 
+            location != 'morton' && 
+            location != 'nicoll' && 
+            location != 'pierce' && 
+            location != 'rocco' && 
+            location != 'tbd'){
             throw 'Invalid Location'
         }
 
@@ -275,7 +294,7 @@ const exportedMethods = {
     checkCourse(course){
         course = this.checkString(course, 'course')
 
-        if(/^[a-zA-Z]{2,4}[-\s]\d{3}$/.test(course)){
+        if(/^[A-Za-z]{2,3}[-\s]?\d{3}$/.test(course)){
             return course;
         } else {
             throw 'Course must be in following format: CS-546 or CS 546'
