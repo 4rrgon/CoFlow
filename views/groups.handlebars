@@ -8,18 +8,24 @@
     Available Groups
 </h1>
 
-{{#each groups}}
-    <div class="group">
-        <h2>{{groupName}}</h2>
-        <p>{{location}} | {{course}} | {{startTime}} - {{endTime}} | {{meetingDate}}</p>
-        <p>{{description}}</p>
-        <form name="reqJoin" id="reqJoin-form" class="joinForm" method="POST" action="/reqJoin">
-        <button type="submit" id="joinButton" name="joinButton">Request to Join</button>
-    </form>
 
-    </div>
-{{/each}}
 
+{{#if groups.length}}
+    {{#each groups}}
+        <div class="group">
+            <h2>{{groupName}}</h2>
+            <span class="colonMenuThing">Top Right Text</span>
+            <p>{{location}} | {{course}} | {{startTime}} - {{endTime}} | {{meetingDate}}</p>
+            <p>{{description}}</p>
+            <form name="reqJoin" id="reqJoin-form" class="joinForm" method="POST" action="/reqJoin">
+                <button type="submit" id="joinButton" name="joinButton">Request to Join</button>
+            </form>
+
+        </div>
+    {{/each}}
+{{else}}
+    <p class="notFound">No groups found</p>
+{{/if}}
 
 
 
